@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Momo+Trust+Display&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        /* width: auto;
+        height: auto; */
+        position: relative;
+        overflow-x: hidden;
+        background-color: black;
+        color: white;
+    }
+
+    .upper img {
+        width: 100%;
+        transform: translateY(-45px);
+        z-index: 1
+    }
+
+    .upper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .lower {
+        background-color: black;
+        width: 100%;
+        height: 120px;
+        position: absolute;
+        top: 925px;
+        display: flex;
+        justify-content: center;
+        z-index: 9;
+        /* position: relative; */
+        /* top: -80px; */
+    }
+
+    .circle {
+        background: linear-gradient(to right, rgba(33, 13, 22, 1) 16%, rgba(184, 40, 105, 1), rgba(229, 9, 20, 1), rgba(184, 40, 105, 1), rgba(33, 13, 22, 1) 84%);
+        width: 200px;
+        height: 50px;
+        border-radius: 100%;
+        transform: scale(10, 2.5);
+        z-index: 10;
+    }
+
+    .circle2 {
+        background: radial-gradient(50% 500% at 50% -420%, rgba(64, 97, 231, 0.4) 80%, rgba(0, 0, 0, 0.1) 100%), black;
+        width: 200px;
+        height: 50px;
+        border-radius: 100%;
+        transform: scale(10, 2.5);
+        transform-origin: bottom center;
+        position: absolute;
+        top: 42px;
+        z-index: 11;
+
+    }
+
+
+    .transparent {
+        width: 100vw;
+        height: 1000px;
+        background: linear-gradient(to bottom,
+                rgba(0, 0, 0, 0.85),
+                /* 👈 Top dark */
+                rgba(0, 0, 0, 0.4),
+                /* 👈 Middle light */
+                rgba(0, 0, 0, 1.85)
+                /* 👈 Bottom dark */
+            );
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        z-index: 2;
+        /* ✅ higher than image */
+    }
+
+    .navbar {
+        position: absolute;
+        top: 20px;
+        z-index: 15;
+        display: flex;
+        /* background-color: rgb(24, 23, 23); */
+        width: 100%;
+        height: 50px;
+        align-items: center;
+        justify-content: center;
+        gap: 820px;
+
+    }
+
+    .navbar img {
+        height: 40px;
+        position: relative;
+        top: 45px;
+
+
+        filter: invert(14%) sepia(88%) saturate(7485%) hue-rotate(2deg) brightness(95%) contrast(105%);
+
+    }
+
+    .logo {
+        position: relative;
+    }
+
+    #language {
+        width: auto;
+        height: 35px;
+        font-size: 16px;
+        background: transparent;
+        color: white;
+        border: none;
+        outline: none;
+        appearance: none;
+        padding-right: 15px;
+        padding-left: 10px;
+        font-weight: 600;
+    }
+
+    .signin {
+        width: 100px;
+        height: 30px;
+        text-align: center;
+        margin: 5px;
+        background-color: red;
+        border-radius: 6px;
+        font-size: 16px;
+        width: 80px;
+        height: 30px;
+        border: none;
+        color: white;
+        font-weight: 600;
+        cursor: pointer;
+    }
+
+    .lang {
+        background: transparent;
+
+        border: 1px solid rgba(255, 255, 255, 0.3);
+
+        border-radius: 3px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2px 8px;
+        width: 130px;
+        height: 30px;
+    }
+
+    .lang::after {
+        content: "▼";
+        font-size: 10px;
+        color: white;
+        margin-left: -5px;
+        pointer-events: none;
+        padding-right: 25px;
+    }
+
+    option {
+        color: black;
+    }
+
+    .lang img {
+        height: 18px;
+        padding-left: 25px;
+        position: relative;
+        top: 44px;
+        filter: brightness(0) invert(1);
+    }
+
+    .buttons {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+    }
+
+    .container {
+        position: absolute;
+        top: 345px;
+        z-index: 20;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 750px;
+        height: auto;
+        text-align: center;
+        font-family: "Momo Trust Display", sans-serif;
+    }
+
+    h1 {
+        font-size: 60px;
+        padding: 0px 50px 30px 50px;
+    }
+
+    h3 {
+        font-size: 20px;
+        padding: 0px 50px 30px 50px;
+        font-family: "Jost", sans-serif;
+        font-weight: 600;
+    }
+
+    .pera {
+        color: white;
+        font-size: 18px;
+        padding: 0px 50px 10px 50px;
+        font-family: "Jost", sans-serif;
+        font-weight: 500;
+    }
+
+    .input-box {
+        position: relative;
+    }
+
+    .einput {
+        width: 400px;
+        height: 50px;
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        color: white;
+        font-size: 18px;
+        padding: 15px 20px 0 20px;
+        box-sizing: border-box;
+        caret-color: white;
+        outline: none;
+    }
+
+    .input-box label {
+        position: absolute;
+        left: 30px;
+        top: 12px;
+        color: #ffffff;
+        font-size: 18px;
+        opacity: 1;
+        pointer-events: none;
+        transition: all 0.3s ease;
+        font-family: "Jost", sans-serif;
+        font-weight: 400;
+    }
+
+    .einput:focus+label,
+    .einput:not(:placeholder-shown)+label {
+        top: 5px;
+        left: 22PX;
+        font-size: 12px;
+        opacity: 1;
+    }
+
+    .einput:focus {
+        border: 3px solid white;
+    }
+
+
+    .getbutton {
+        width: 250px;
+        height: 50px;
+        background-color: red;
+        border: none;
+        color: white;
+        font-size: 25px;
+        font-weight: 700;
+        border-radius: calc(0.1875rem);
+        border: 1px solid white;
+        cursor: pointer;
+    }
+
+    .getbutton::after {
+        content: ">";
+        padding-left: 20px;
+    }
+
+    .inputbutton {
+        display: flex;
+        gap: 10px;
+    }
+
+    .scrollbaar {
+        height: 500px;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        position: relative;
+    }
+    
+    .main {
+        /* border: 2px solid white; */
+        height: 400px;
+        width: 55vw;
+        position: absolute;
+        /* background-color: green; */
+        /* border: 2px solid red; */
+        position: relative;
+        top: -100px;
+        z-index: 21;
+    }
+
+    .header {
+        position: relative;
+        top: -20px;
+    }
+
+    .trending-now {
+        font-size: 40px;
+        font-family: "Jost", sans-serif;
+        font-weight: bold;
+        margin-left: 10px;
+        position: relative;
+        left: -20px;
+
+
+    }
+
+    .content {
+        height: 340px;
+        position: relative;
+        top: -22px;
+
+    }
+
+    .scroll {
+
+        height: 350px;
+        
+        display: flex;
+    }
+
+    .ullist {
+        display: flex;
+        list-style: none;
+        position: relative;
+        left: 0px;
+        /* transition: left 0.6s ease-in-out; */
+    }
+
+    .li-image {
+        height: 276px;
+        width: 197px;
+        /* border: 2px solid rgb(0, 242, 255); */
+        position: relative;
+    }
+
+    .img {
+        margin: 20px;
+        cursor: pointer;
+        transition: transform 0.4s ease, z-index 0.4s ease;
+    }
+.images{
+    border-radius: 10px;
+    transition: transform 0.4s ease, filter 0.4s ease, box-shadow 0.4s ease;
+}
+
+    .number {
+        position: absolute;
+        top: 140px;
+        left: -20px;
+        font-size: 100px;
+        color: black;
+        -webkit-text-stroke: 2px white;
+        font-family: "Momo Trust Display", sans-serif;
+        font-weight: 150px;
+        transition: transform 0.4s ease;
+    }
+
+    .left {
+        height: 350px;
+        width: 0px;
+        background-color: black;
+        justify-content: center;
+        align-items: center;
+        display:flex;
+        transition: width 0.4s ease-in-out;
+        z-index: 2;
+        position: relative;
+
+    }
+
+    .right {
+        height: 350px;
+        width: 40px;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: width 0.4s ease-in-out;
+        position: relative;
+        z-index: 2;
+    }
+
+    .buttonleft {
+        height: 100px;
+        width: 0px;
+        border-radius: 10px;
+        border: none;
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        padding: 0px;
+        margin: 0px;
+        cursor: pointer;
+        background-color: rgba(255, 255, 255, 0.1);
+        transition: width 0.4s ease-in-out;
+
+    }
+    .buttonright {
+        height: 100px;
+        width: 25px;
+        border-radius: 10px;
+        border: none;
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        padding: 0px;
+        margin: 0px;
+        cursor: pointer;
+        background-color: rgba(255, 255, 255, 0.1);
+        transition: width 0.4s ease-in-out;
+
+    }
+    .button:hover{
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .elements {
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+
+    }
+    .img:hover {
+      transform: scale(1.01);
+      z-index: 10;
+    }
+
+    .img:hover .images {
+      transform: scale(1.01);
+      filter: brightness(1.2);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    .img:hover .number {
+      transform: scale(1.1);
+    }
+
+    .ullist:hover .img:not(:hover) {
+      transform: scale(0.95);
+      opacity: 0.7;
+    }
+</style>
+
+
+<body>
+    <div class="upper">
+        <img src="main image.jpg" alt="">
+        <div class="transparent"></div>
+        <nav class="navbar">
+            <div class="logo"><img src="logo.svg" alt=""></div>
+
+            <div class="buttons">
+                <button class="lang">
+                    <img src="lang.svg" alt="">
+                    <select name="lan" id="language">
+                        <option value="English">English</option>
+                        <option value="Hindi">Hindi</option>
+                    </select></button>
+                <button class="signin">Sign in</button>
+            </div>
+        </nav>
+        <div class="container">
+            <h1>Unlimited movies, shows, and more</h1>
+            <h3>Starts at ₹149. Cancel at any time.</h3>
+            <p class="pera">Ready to watch? Enter your email to create or restart your membership.</p>
+            <div class="inputbutton">
+                <div class="input-box">
+                    <input type="email" class="einput" id="email" placeholder="" required>
+                    <label for="email">Email address</label>
+                </div>
+                <button class="getbutton">Get Started</button>
+
+            </div>
+        </div>
+    </div>
+    <div class="lower">
+        <div class="circle"></div>
+        <div class="circle2"></div>
+    </div>
+    <div class="scrollbaar">
+        <div class="main">
+            <div class="header">
+                <h2 class="trending-now">Trending Now</h2>
+            </div>
+            <div class="content">
+                <div class="scroll">
+                    <div class="left"><button class="button buttonleft"><svg viewBox="0 0 24 24" width="24" height="24"
+                                data-icon="ChevronLeftMedium" data-icon-id=":r9:" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" role="img">
+                                <path fill="currentColor" fill-rule="evenodd"
+                                    d="m8.41 12 7.3 7.3-1.42 1.4-8-8a1 1 0 0 1 0-1.4l8-8 1.42 1.4z" clip-rule="evenodd">
+                                </path>
+                            </svg></button></div>
+                    <div class="elements">
+                        <ul class="ullist">
+                            <li class="img img1">
+                                <div class="li-image"><img class="images" src="img1.webp" alt="">
+                                    <p class="number">1</p>
+                                </div>
+                            </li>
+                            <li class="img img2">
+                                <div class="li-image"><img class="images" src="img2.webp" alt="">
+                                    <p class="number">2</p>
+                                </div>
+                            </li>
+                            <li class="img img3">
+                                <div class="li-image"><img class="images" src="img3.webp" alt="">
+                                    <p class="number">3</p>
+                                </div>
+                            </li>
+                            <li class="img img4">
+                                <div class="li-image"><img class="images" src="img4.webp" alt="">
+                                    <p class="number">4</p>
+                                </div>
+                            </li>
+                            <li class="img img5">
+                                <div class="li-image"><img class="images" src="img5.webp" alt="">
+                                    <p class="number">5</p>
+                                </div>
+                            </li>
+                            <li class="img img6">
+                                <div class="li-image"><img class="images" src="img6.webp" alt="">
+                                    <p class="number">6</p>
+                                </div>
+                            </li>
+                            <li class="img img7">
+                                <div class="li-image"><img class="images" src="img7.webp" alt="">
+                                    <p class="number">7</p>
+                                </div>
+                            </li>
+                            <li class="img img8">
+                                <div class="li-image"><img class="images" src="img8.webp" alt="">
+                                    <p class="number">8</p>
+                                </div>
+                            </li>
+                            <li class="img img9">
+                                <div class="li-image"><img class="images" src="img9.webp" alt="">
+                                    <p class="number">9</p>
+                                </div>
+                            </li>
+                            <li class="img img10">
+                                <div class="li-image"><img class="images" src="img10.webp" alt="">
+                                    <p class="number">10</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="right"><button class="button buttonright"><svg viewBox="0 0 24 24" width="24"
+                                height="24" data-icon="ChevronRightMedium" data-icon-id=":r4:" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" role="img" class="">
+                                <path fill="currentColor" fill-rule="evenodd"
+                                    d="m15.59 12-7.3 7.3 1.42 1.4 8-8a1 1 0 0 0 0-1.4l-8-8-1.42 1.4z"
+                                    clip-rule="evenodd">
+                                </path>
+                            </svg></button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    const left = document.querySelector(".left")
+    const right = document.querySelector(".right")
+    const list = document.querySelector(".ullist")
+    const buttonleft=document.querySelector(".buttonleft")
+    const buttonright=document.querySelector(".buttonright")
+
+    right.addEventListener("click", function (e) {
+    if(getComputedStyle(list).left==="0px"){
+        list.style.left="-980px"
+        left.style.width="40px"
+        buttonleft.style.width="25px"
+        list.style.transition="left 1s ease-in-out"
+        
+    }
+    else if(getComputedStyle(list).left==="-980px"){
+        list.style.left="-1400px"
+        right.style.width="0px"
+        buttonright.style.width="0px"
+        list.style.transition="left 0.6s ease-in-out"
+        
+    }
+        
+    })
+    left.addEventListener("click", function (e) {
+    if(getComputedStyle(list).left==="-980px"){
+        list.style.left="0px"
+        left.style.width="0px"
+        buttonleft.style.width="0px"
+        // right.style.display="flex"
+        // left.style.display="none"
+        list.style.transition="left 1.2s ease-in-out"
+    }
+    else if(getComputedStyle(list).left==="-1400px"){
+        list.style.left="-980px"
+        // right.style.display="flex"
+        right.style.width="40px"
+        buttonright.style.width="25px"
+        
+    }
+        
+    })
+
+</script>
+</html>
