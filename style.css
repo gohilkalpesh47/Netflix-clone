@@ -12,7 +12,7 @@ body {
     color: white;
 }
 
-.upper img {
+.background-image {
     width: 100%;
     transform: translateY(-45px);
     z-index: 1
@@ -94,10 +94,10 @@ body {
 
 }
 
-.navbar img {
+.navbar-logo {
     height: 40px;
     position: relative;
-    top: 45px;
+    top: 1px;
     filter: invert(14%) sepia(88%) saturate(7485%) hue-rotate(2deg) brightness(95%) contrast(105%);
 
 }
@@ -163,11 +163,11 @@ option {
     color: black;
 }
 
-.lang img {
+.lang-logo {
     height: 18px;
     padding-left: 25px;
     position: relative;
-    top: 44px;
+    top: 0px;
     filter: brightness(0) invert(1);
 }
 
@@ -343,7 +343,7 @@ h1 {
     position: relative;
 }
 
-.img {
+.li-img {
     margin: 20px;
     cursor: pointer;
     transition: transform 0.4s ease, z-index 0.4s ease;
@@ -434,29 +434,29 @@ h1 {
 
 }
 
-.img:hover {
+.li-img:hover {
     transform: scale(1.01);
     z-index: 10;
 }
 
-.img:hover .images {
+.li-img:hover .images {
     transform: scale(1.01);
     filter: brightness(1.2);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
 }
 
-.img:hover .number {
+.li-img:hover .number {
     transform: scale(1.1);
 }
 
-.ullist:hover .img:not(:hover) {
+.ullist:hover .li-img:not(:hover) {
     transform: scale(0.95);
     opacity: 0.7;
 }
 
 .third-section {
     width: 100vw;
-    height: 500px;
+    height: 450px;
     display: flex;
     justify-content: center;
 }
@@ -517,4 +517,83 @@ h1 {
 
 .box:hover {
     transform: scale(1.05);
+}
+
+.forth-section {
+    height: 1000px;
+    display: flex;
+    justify-content: center;
+}
+
+.forth-section-container {
+    height: auto;
+    width: 55vw;
+}
+
+.forth {
+    position: relative;
+    top: -20px;
+}
+
+.headingQNA {
+    font-size: 40px;
+    font-family: "Jost", sans-serif;
+    font-weight: bold;
+}
+
+.qua-ans {
+    height: auto;
+    width: 55vw;
+}
+
+.quation-box,
+.answer-box {
+    background: rgb(45, 45, 45);
+    font-family: "Jost", sans-serif;
+    font-weight: 400;
+    font-size: 23px;
+
+}
+
+.quation-box {
+    padding: 30px 10px 30px 20px;
+    width: 55vw;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    color: white;
+    user-select: none;
+
+
+}
+
+
+.quation-box:hover {
+    background: rgb(57, 57, 57);
+}
+
+.answer-box {
+    height: 0px;
+    box-sizing: border-box;
+    width: 55vw;
+    overflow: hidden;
+    margin-top: 0px;
+    transition: all 0.1s ease-in-out;
+    padding: 0px 20px;
+
+}
+
+
+.cross {
+    filter: brightness(0) invert(1);
+    transition: all 0.1s ease-in-out;
+    -webkit-user-drag: none;
+
+}
+
+.qua-ans {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
