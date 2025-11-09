@@ -219,7 +219,7 @@ h1 {
 .einput {
     width: 400px;
     height: 50px;
-    background: transparent;
+    background: rgba(57, 56, 56, 0.472);
     border: 1px solid rgba(255, 255, 255, 0.3);
     color: white;
     font-size: 18px;
@@ -520,7 +520,7 @@ h1 {
 }
 
 .forth-section {
-    height: 1000px;
+    height: 800px;
     display: flex;
     justify-content: center;
 }
@@ -596,4 +596,67 @@ h1 {
     display: flex;
     flex-direction: column;
     gap: 5px;
+}
+.fifth-section {
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.last-section {
+        height: auto;
+        width: 55vw;
+        font-family: "Jost", sans-serif;
+
+    }
+
+    .center {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .pera {
+        color: white;
+        font-size: 18px;
+        padding: 0px 50px 10px 50px;
+        font-family: "Jost", sans-serif;
+        font-weight: 500;
+    }
+    .table {
+        height: 200px;
+        display: flex;
+        gap: 125px;
+        margin-top:70px ;
+        opacity: 0.8;
+
+
+    }
+
+    .first-col {
+        list-style: none;
+    }
+
+    .items {
+        line-height: 2;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    .contact-number {
+        cursor: pointer;
+        margin-top: 70px;
+        opacity: 0.8;
+    }
+    .net-india{
+margin-top: 40px;
+opacity: 0.8;
+}
+.last-pera{
+    font-size: 14px;
+    margin-top: 25px;
+    opacity: 0.8;
+    margin-bottom: 50px;
 }
