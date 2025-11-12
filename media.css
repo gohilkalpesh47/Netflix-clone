@@ -1,0 +1,93 @@
+/* 🌍 Universal Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 💻 Base Layout (Desktop Default) */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #000;
+  color: #fff;
+  font-size: 16px;
+}
+
+/* =======================================================
+   📺 1. 4K / TV Screens (1600px and above)
+   ======================================================= */
+@media (min-width: 1600px) {
+  /* Example: content max width limit */
+  .container {
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+}
+
+/* =======================================================
+   💻 2. Laptops / Desktops (1025px – 1599px)
+   ======================================================= */
+@media (max-width: 1599px) and (min-width: 1025px) {
+  /* Example: reduce large paddings */
+  .section {
+    padding: 80px 100px;
+  }
+}
+
+/* =======================================================
+   🖥️ 3. Small Laptop / Tablet Landscape (769px – 1024px)
+   ======================================================= */
+@media (max-width: 1024px) and (min-width: 769px) {
+  /* Example: adjust layout to 2 columns */
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* =======================================================
+   📱 4. Tablet Portrait (601px – 768px)
+   ======================================================= */
+@media (max-width: 768px) and (min-width: 601px) {
+  /* Example: stack navbar vertically */
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* =======================================================
+   📲 5. Large Mobiles (481px – 600px)
+   ======================================================= */
+@media (max-width: 600px) and (min-width: 481px) {
+  /* Example: make buttons full-width */
+  button {
+    width: 100%;
+    padding: 14px;
+  }
+}
+
+/* =======================================================
+   📞 6. Normal Mobiles (361px – 480px)
+   ======================================================= */
+@media (max-width: 480px) and (min-width: 361px) {
+  /* Example: smaller font and single column */
+  body {
+    font-size: 14px;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =======================================================
+   📟 7. Small Mobiles (320px – 360px)
+   ======================================================= */
+@media (max-width: 360px) {
+  /* Example: tighten spacing for very small screens */
+  body {
+    font-size: 13px;
+  }
+  .section {
+    padding: 20px;
+  }
+}
