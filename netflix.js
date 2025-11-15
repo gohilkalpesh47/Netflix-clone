@@ -63,56 +63,53 @@ left.addEventListener("click", function (e) {
 })
 
 
-const quationbox = document.querySelectorAll(".quation-box")
-const fifthsection = document.querySelector(".fifth-section")
-const answerbox = document.querySelectorAll(".answer-box")
+
+// const quationbox = document.querySelectorAll(".quation-box")
+// const fivesection = document.querySelector(".five-section")
+// const answerbox = document.querySelectorAll(".answer-box")
 
 
 
-quationbox.forEach((i) => {
+// quationbox.forEach((i) => {
 
-    const answer = i.nextElementSibling;
-    const cross = i.querySelector(".cross");
-
-
+//     const answer = i.nextElementSibling;
+//     const cross = i.querySelector(".cross");
 
 
-    i.addEventListener("click", function () {
 
-        const pera = answer.querySelectorAll("p")
-        const count = pera.length
 
-        const isOpen = getComputedStyle(answer).height !== "0px";
+//     i.addEventListener("click", function () {
 
-        document.querySelectorAll(".answer-box").forEach(a => {
-            a.style.height = "0px";
-            a.style.marginTop = "0px";
-            a.style.marginBottom = "0px";
-            a.style.padding = "0px 20px";
-            fifthsection.style.marginTop = "0px"
-        });
-        document.querySelectorAll(".cross").forEach(c => {
-            c.style.transform = "rotate(0deg)";
-        });
+//         const pera = answer.querySelectorAll("p")
+//         const count = pera.length
 
-        if (!isOpen) {
+//         const isOpen = getComputedStyle(answer).height !== "0px";
 
-            if(count===2){fifthsection.style.marginTop = "170px"}
-            else if(count===1){fifthsection.style.marginTop = "80px"}
+//         document.querySelectorAll(".answer-box").forEach(a => {
+//             a.style.height = "0px";
+//             a.style.marginTop = "0px";
+//             a.style.marginBottom = "0px";
+//             a.style.padding = "0px 20px";
+//             fivesection.style.marginTop = "0px"
+//         });
+//         document.querySelectorAll(".cross").forEach(c => {
+//             c.style.transform = "rotate(0deg)";
+//         });
+
+//         if (!isOpen) {
+
+//             if(count===2){fivesection.style.marginTop = "170px"}
+//             else if(count===1){fivesection.style.marginTop = "80px"}
     
             
-            answer.style.height = "auto";
-            answer.style.marginTop = "-2px";
-            answer.style.marginBottom = "5px";
-            answer.style.padding = "10px 20px";
-            cross.style.transform = "rotate(45deg)";
-        }
+//             answer.style.height = "auto";
+//             answer.style.marginTop = "-2px";
+//             answer.style.marginBottom = "5px";
+//             answer.style.padding = "10px 20px";
+//             cross.style.transform = "rotate(45deg)";
+//         }
 
-    })
-
-
-})
+//     })
 
 
-
-
+// })
